@@ -8,14 +8,14 @@
 .container {
 	width: 100%;
 	height: 100vh;
-	background-color: rgb(121, 108, 108);
+	background-color: #222831;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 #form {
-	background-color: aliceblue;
+	background-color: #393e46;
 	display: flex;
 	flex-direction: column;
 	padding: 2vw 3vw;
@@ -25,45 +25,56 @@
 }
 
 #form-title {
-    color: rgb(106, 115, 122);
-    font-weight: 800;
-    margin-bottom: 22px;
-    text-align: center;
-    font-size: 1.6rem;
+	color: #2ad1a7;
+	font-weight: 800;
+	margin-bottom: 22px;
+	text-align: center;
+	font-size: 1.6rem;
 }
 
-form input, form textarea {
-    border: 1px solid black;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: antiquewhite;
-    font-size: 16px;
-
+form input,
+form textarea {
+	border: 1px solid black;
+	margin: 10px 0;
+	padding: 10px;
+	background-color: #f2f2f2;
+	font-size: 16px;
 }
 
 form button {
-    padding: 15px;
-    background-color: aqua;
-    color: rgb(40, 65, 87);
-    font-size: 18px;
-    border: 1px solid black;
-    cursor: pointer;
-    width: 40%;
-    margin: 10px auto 0;
-    border-radius: 10px;
-    transition: 0.3s ease;
+	padding: 15px;
+	background-color: #1e8033;
+	color: #f2f2f2;
+	font-size: 18px;
+	border: 1px solid black;
+	cursor: pointer;
+	width: 40%;
+	margin: 10px auto 0;
+	border-radius: 10px;
+	transition: 0.3s ease;
 }
 
 form button:hover {
-    background-color: rgb(36, 46, 46);
-    color: antiquewhite;
+	background-color: #008060;
 }
 
+input,
+#text-area:focus {
+    transition: 1s ease;
+}
+
+input:focus,
+#text-area:focus {
+	background: #fff;
+	outline: 0;
+	box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+}
 
 .notification {
 	z-index: 1;
 	position: fixed;
-	display: flex;
+	display: none;
+	width: 27%;
 }
 
 .toast {
@@ -71,8 +82,8 @@ form button:hover {
 	padding: 10px;
 	color: #fff;
 	margin-bottom: 10px;
-	width: 400px;
-	height: 200px;
+	width: 100%;
+	height: 150px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -81,21 +92,30 @@ form button:hover {
 	animation: show 0.3s ease 1 forwards;
 }
 
-.toast i {
-	font-size: x-large;
+.toast i:first-child {
+	font-size: 50px;
+	color: #f2f2f2;
 }
 
 .toast i {
+	font-size: 30px;
 	color: #0abf30;
-	font-size: x-large;
+}
+
+.toast i:not(:first-child):hover {
+	color: #f2f2f2;
 }
 
 .alert-title {
 	font-size: large;
 	font-weight: bold;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	align-self: flex-start;
+}
+
+.alert-message {
+	font-size: 0.8rem;
+	margin-top: 10px;
 }
 
 .toast::before {
