@@ -23,15 +23,33 @@
 						<div class="alert-title">Success</div>
 						<p class="alert-message">Your Message Has Been Successfully Sent</p>
 					</div>
-					<i class="fa-solid fa-xmark" onclick="(this.parentElement.style.display = 'none')"></i>
+					<i class="fa-solid fa-xmark" onclick="(this.parentElement.style.display = 'none', location.reload())"></i>
 				</div>
 			</div>
 			<form id="form">
 				<h4 id="form-title">Contact Me!</h4>
-				<input type="text" id="name" placeholder="Your Name" required />
-				<input type="email" id="email" placeholder="Email" required />
-				<input type="text" id="phone" placeholder="Phone Number" required />
-				<textarea id="text-area" rows="5" placeholder="Type your message here"></textarea>
+				<div class="form-element">
+					<input type="text" id="name" placeholder="Your Name" autocomplete="off" />
+					<p class="errors">Error</p>
+				</div>
+				<div class="form-element">
+					<input type="email" id="email" placeholder="Email" autocomplete="off" />
+					<p class="errors">Error</p>
+				</div>
+				<div class="form-element">
+					<input type="number" id="phone" placeholder="Phone Number" autocomplete="off" />
+					<p class="errors">Error</p>
+				</div>
+				<div class="form-element">
+					<input type="text" id="subject" placeholder="Subject" autocomplete="off" />
+					<p class="errors">Error</p>
+				</div>
+
+				<div class="form-element">
+					<textarea id="text-area" rows="10" placeholder="Type your message here"></textarea>
+					<p class="errors">Error</p>
+				</div>
+
 				<button type="submit">Send</button>
 			</form>
 		</div>
